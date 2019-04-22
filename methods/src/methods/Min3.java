@@ -30,7 +30,7 @@ public class Min3 {
 
 		}
 		
-		public static int getMax3(int number1, int number2, int number3) {
+		public static int getMin3(int number1, int number2, int number3) {
 			
 			if (number1<=number2&&number1<=number3) {
 				//System.out.println("The highest number is: "+ number1);
