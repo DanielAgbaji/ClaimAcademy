@@ -19,39 +19,34 @@ public class XOR {
 		
 		Scanner input1 = new Scanner(System.in);
 		
-		System.out.println("Type your first number: ");
+		System.out.println("Type your first value: ");
 		
 		boolean firstInput = input1.hasNextInt();
 		
 		Scanner input2 = new Scanner(System.in);
 		
-		System.out.println("Type your second number: ");
+		System.out.println("Type your second value: ");
 		
 		boolean secondInput =  input2.hasNext();
 	
 		
-		System.out.println("The condition is met" +xor(firstInput, secondInput));
+		System.out.println("The condition: " +xor(firstInput, secondInput)+" is met ");
 		
 	}
 		
-	public static boolean xor (boolean firstInput, boolean secondInput) {
+	public static boolean xor (boolean firstInputTrue, boolean secondInputFalse) {
 		
-		boolean value = ;
+		//boolean value = ;
 		
-		if ((firstInput==true||secondInput==true)||(firstInput==false||secondInput==false)) {
+		if ((firstInputTrue&&!secondInputFalse)||(secondInputFalse&&!firstInputTrue)) {
 			
-			value = true;
-			System.out.println (true);
+			return true;
 		}
-		else if (firstInput&&secondInput==true) {
+		else 
+			System.out.println ("The statement is false");
 			
-			System.out.println(" Given the condition, the both numbers are True, "
-					
-					+" therefore nothing is returned "); 
-			
-		}
           
-		   return firstInput||secondInput!firstInput&&secondInput;
+		   return true;
 	
 	}
 	
