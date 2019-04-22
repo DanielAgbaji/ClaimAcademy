@@ -17,10 +17,14 @@ import java.util.Scanner;
 public class Median {
 	public static void main(String[]args) {
 		
+		//Create objects of class Max3 and Min3 in order to use their properties and methods
 		
 		Max3  maximumNumber = new Max3 ();
 		
 		Min3  minimumNumber = new Min3 ();
+		
+		
+		//receive 3 numerical inputs from users. This will be used as the arguments to be passed
 		
 		
 		Scanner input1 = new Scanner (System.in);
@@ -38,6 +42,9 @@ public class Median {
 		System.out.print ("Enter your third number: ");
 		
 		int number3 = input3.nextInt();
+		
+		//Calculate the median of the three numbers
+		
 		
 		int median = maximumNumber.getMax3(number1, number2, number3)-minimumNumber.getMin3(number1, number2, number3);
 		
