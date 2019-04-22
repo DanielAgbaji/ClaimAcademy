@@ -10,6 +10,7 @@
  */
 
 package methods;
+import java.awt.SecondaryLoop;
 import java.util.Scanner;
 
 public class XOR {
@@ -19,18 +20,18 @@ public class XOR {
 		
 		Scanner input1 = new Scanner(System.in);
 		
-		System.out.println("Type your first value: ");
+		System.out.println("Enter the word first word 'true:' ");
 		
-		boolean firstInput = input1.hasNextInt();
+		boolean firstInput = input1.nextBoolean();
 		
 		Scanner input2 = new Scanner(System.in);
 		
-		System.out.println("Type your second value: ");
+		System.out.println("Enter the word first word 'false:'");
 		
-		boolean secondInput =  input2.hasNext();
+		boolean secondInput =  input2.nextBoolean();
 	
 		
-		System.out.println("The condition: " +xor(firstInput, secondInput)+" is met ");
+		System.out.println(xor(firstInput, secondInput));
 		
 	}
 		
@@ -38,15 +39,16 @@ public class XOR {
 		
 		//boolean value = ;
 		
-		if ((firstInputTrue&&!secondInputFalse)||(secondInputFalse&&!firstInputTrue)) {
+		if ((firstInputTrue&&!secondInputFalse)||(firstInputTrue&&!secondInputFalse)) {
 			
-			return true;
+			System.out.println ("The statement is true");
 		}
 		else 
 			System.out.println ("The statement is false");
+		return ((firstInputTrue&&!secondInputFalse)||(firstInputTrue&&!secondInputFalse));
 			
           
-		   return true;
+		  
 	
 	}
 	
