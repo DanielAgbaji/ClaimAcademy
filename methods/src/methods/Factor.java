@@ -28,21 +28,11 @@ public class Factor {
 	
 	public  static Boolean isFactor(int k, int n) {
 		
-		//factorizing the value of k for n
-		//System.out.println("Factors of "+n +" are: ");
-		//for( k=1;k<n;k++)
-        //{
-            if (n % k == 0)
-            {
+            if (n % k == 0){
                  //System.out.print(k+" is a factor of " +n);
-                 
-                
-        
-		
-	}
-        //}
+            	}
+      
 		return n%k==0;
-		
-	}	
+		}	
 	
 }
