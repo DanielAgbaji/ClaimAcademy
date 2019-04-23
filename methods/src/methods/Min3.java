@@ -25,7 +25,7 @@ public class Min3 {
 			
 			int number3 = input3.nextInt();
 			
-			System.out.print(getMax3(number1, number2, number3));
+			System.out.print("The lowest number is: "+getMin3(number1, number2, number3));
 			
 
 		}
@@ -33,19 +33,19 @@ public class Min3 {
 		public static int getMin3(int number1, int number2, int number3) {
 			
 			if (number1<=number2&&number1<=number3) {
-				//System.out.println("The highest number is: "+ number1);
+				
 				
 				return number1;
 				
 			}
 			
 			else if (number2<=number1&&number2<=number3) {
-				//System.out.println("The highest number is: "+ number2);
+				
 				return number2;
 				
 			}
 			else if (number3<=number1&&number1<=number2) {
-				//System.out.println("The highest number is: "+ number3);
+		
 				return number3;
 				
 			}

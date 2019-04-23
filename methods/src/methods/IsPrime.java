@@ -29,10 +29,15 @@ public class IsPrime {
 	 
 	
 	public static Boolean isPrime(int number1) {
+		
 		Factor isPrime = new Factor();
+		
 		for (int i=1; i<number1; i++) {
+			
 		if ((number1%2==1)||(number1%2!=0)) {
+			
 			if (isPrime.isFactor(i, number1)) {
+				
 				
 			}
 		}
