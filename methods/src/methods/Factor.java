@@ -26,24 +26,23 @@ public class Factor {
 		System.out.println(isFactor(firstInput, secondInput));
 	}
 	
-	public  static boolean isFactor(int k, int n) {
+	public  static Boolean isFactor(int k, int n) {
 		
 		//factorizing the value of k for n
+		//System.out.println("Factors of "+n +" are: ");
+		//for( k=1;k<n;k++)
+        //{
+            if (n % k == 0)
+            {
+                 //System.out.print(k+" is a factor of " +n);
+                 
+                
+        
 		
-		int factor = n/k;
-	
-		boolean logic = true;
-		if (factor*k==n) 
-		{
-			Boolean logicalCase = logic; 
-			System.out.println("The number, " +k +", you entered is a factor. Therefore the statement is "+logic);
-			
-			
-		}
-		else
-			System.out.println("The number, " +k +", you entered is not a factor. Therefore the statement is " +!logic);
-		
-		return logic;
 	}
-
+        //}
+		return n%k==0;
+		
+	}	
+	
 }
