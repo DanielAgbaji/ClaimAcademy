@@ -13,24 +13,37 @@ public class Factor {
 		
 		Scanner input1 = new Scanner(System.in);
 		
-		System.out.println("Enter the word first word 'true:' ");
+		System.out.println("Enter the integer value of the factor ");
 		
-		boolean firstInput = input1.();
-
+		int firstInput = input1.nextInt();
+		
+		Scanner input2 = new Scanner(System.in);
+		
+		System.out.println("Enter the integer value you are checking a factor for ");
+		
+		int secondInput = input1.nextInt();
+		
+		System.out.println(isFactor(firstInput, secondInput));
 	}
 	
-	public static int isFactor(int k, int n) {
+	public  static boolean isFactor(int k, int n) {
 		
 		//factorizing the value of k for n
 		
-		int factor = k/n;
+		int factor = n/k;
 	
-		
+		boolean logic = true;
 		if (factor*k==n) 
 		{
-			System.out.println(" The number:" +k +"you entered is a factor");
+			Boolean logicalCase = logic; 
+			System.out.println("The number, " +k +", you entered is a factor. Therefore the statement is "+logic);
+			
+			
 		}
-		return k;
+		else
+			System.out.println("The number, " +k +", you entered is not a factor. Therefore the statement is " +!logic);
+		
+		return logic;
 	}
 
 }
