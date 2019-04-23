@@ -7,43 +7,39 @@
 
 package methods;
 
+import java.util.Scanner;
+
 public class IsPrime {
 	
 	public static void main (String [] args) {
 		
-		 for(int num=2;num<=1000;num++)
-		    {
-		        if(perfect(num))
-		        {
-		            System.out.println(num + " is perfect.");
-		            System.out.printf("Factors: ");
+	Scanner input = new Scanner (System.in);
+		
+		System.out.println("Enter your first number");
+		
+		int number1 = input.nextInt();
+		
+		System.out.println(isPrime(number1));
+		
+		
+		
+		
 
-
-		            for(int i=1;i<num;i++)
-		            {
-		                if (num % i == 0)
-		                {
-		                     System.out.print(i+" ");
-		                }
-		            }
-		            System.out.print("\n"); // add this line to your code
-
-		        }
-		    }
+	}
+	 
+	
+	public static Boolean isPrime(int number1) {
+		Factor isPrime = new Factor();
+		for (int i=1; i<number1; i++) {
+		if ((number1%2==1)||(number1%2!=0)) {
+			if (isPrime.isFactor(i, number1)) {
+				
+			}
 		}
-public static Boolean perfect(int num)
-{
-    int sum = 0;
-
-    for(int i=1;i<num;i++)
-    {
-        if (num % i == 0)
-        {
-            sum+=i;
-        }
-    }
-    return sum==num;	
-
-}
+		
+	}
+		return number1%2!=0;
+	}
+	
 }
 

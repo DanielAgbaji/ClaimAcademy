@@ -26,8 +26,7 @@ public class Factor {
 		System.out.println(isFactor(firstInput, secondInput));
 	}
 	
-	public  static Boolean isFactor(int k, int n) {
-		
+	public  static Boolean isFactor(int k, int n) { 
             if (n % k == 0){
                  //System.out.print(k+" is a factor of " +n);
             	}
