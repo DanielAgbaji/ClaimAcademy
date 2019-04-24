@@ -55,7 +55,7 @@ public class Student {
 	public void setTelephone() {
 		this.telephone=telephone;
 	}
-	public 
+	 
 
 	
 

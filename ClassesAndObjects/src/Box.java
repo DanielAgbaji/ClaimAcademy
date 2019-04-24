@@ -1,6 +1,6 @@
 /*
  *  
-rite a "Box" class which has the following properties:
+Write a "Box" class which has the following properties:
 cost of material per square inch, 
 height in inches, 
 length in inches, 
