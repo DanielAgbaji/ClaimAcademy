@@ -7,9 +7,11 @@ public class LibraryResources {
 	private String title;
 	private int numberOfPages;
 	
+	//default constructor
 	public LibraryResources() {
 		
 	}
+	//parameterized constructor
 	public LibraryResources(String resourceType, String author, int isbn, 
 			String title, int numberOfPages) {
 		

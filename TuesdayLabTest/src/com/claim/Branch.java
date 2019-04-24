@@ -7,10 +7,11 @@ public class Branch {
 	private String branchEmail;
 	private String branchWebsite;
 	
-
+	//default constructor 
 	public Branch() {
 		
 	}
+	//parameterized constructor
 	public Branch(String branchName, long branchTelephone, 
 			String branchAddress, String branchEmail, String branchWebsite ) {
 		this.branchName = branchName;

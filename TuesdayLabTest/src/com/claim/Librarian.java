@@ -15,10 +15,11 @@ public class Librarian {
 	
 	private String librarianRank;
 
-	
+	//default constructor
 	public Librarian () {
 		
 	}
+	//parameterized constructor
 	
 	public Librarian (String LibrarianFirstName, 
 			String LibrarianLastName, int LibrarianAge, String LibrarianSex, 
