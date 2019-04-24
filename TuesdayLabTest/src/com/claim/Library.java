@@ -9,6 +9,10 @@ public class Library {
 		
 		Branch libraryBranch = new Branch();
 		
+		LibraryResources libraryResource= new LibraryResources("Book", "William Shakespeare", );
+		
+		
+		
 		Patron newPatron2 = new Patron ("Daniel", "Agbaji", 
 				29,"Male", "Emporia, Kansas", "Student", "DA-323232"); 
 				
