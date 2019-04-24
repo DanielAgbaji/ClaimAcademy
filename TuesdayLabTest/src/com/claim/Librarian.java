@@ -87,4 +87,6 @@ public class Librarian {
 	public void setPatronLibraryCardNumber(String librarianRank) {
 		this.librarianRank=librarianRank;
 	}
+	
+	public String addPatrons()
 }
