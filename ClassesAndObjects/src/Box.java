@@ -24,22 +24,4 @@ public class Box {
 	
 	
 
-	public static void main(String[] args) {
-		
-
-	}
 	
-	public static double boxVolume() {
-		
-		
-	}
-	public static double boxSurface() {
-		
-		
-	}
-	public static double boxCost() {
-		
-		
-	}
-
-}
