@@ -1,13 +1,25 @@
 package com.claim;
-
+import java.util.ArrayList;
+import java.util.Scanner;
 public class Library {
 
+	ArrayList<Patron> patrons = new ArrayList<>();	
 	public static void main(String[] args) {
+		// Patron object created
 		Patron newPatron1 = new Patron();
 		
-		Branch branch = new Branch();
 		
-		Branch libraryBranch = new Branch();
+		
+		// Branch object created
+		
+		Branch libraryBranch = new Branch("Emporia Public Library",652323, 
+				"Emporia Kansas", "emporialibrary@emporia.org", "www.emporialibrary.com");
+		
+		
+		
+		
+		
+		// LibraryResources object created
 		
 		LibraryResources libraryResource= new LibraryResources("Book", 
 				"William Shakespeare", 23220323,"Things Fall Apart",500);
@@ -15,19 +27,6 @@ public class Library {
 		
 		
 		
-		
-		Patron newPatron2 = new Patron ("Daniel", "Agbaji", 
-				29,"Male", "Emporia, Kansas", "Student", "DA-323232"); 
-				
-			System.out.println( "Welcome to the Kansas Library System"
-			+"\n"+"Patron's Details\n"+"Name: "+newPatron2.getPatronFirstName()+
-					
-					" "+newPatron2.getPatronLastName()+"\n " +"Age: "
-					+newPatron2.getPatronAge()+"\n "+"Sex: "
-					+newPatron2.getPatronSex()+"\n"+"Address:"
-					+newPatron2.getPatronAddress()+"\n "+"Category: "
-					+newPatron2.getPatronCategory()+"\n "+"Library Card NO: "
-					+newPatron2.getPatronLibraryCardNumber());
 			
 			System.out.println("Details of Resources Patron Borrowed"
 					+"\n"+"Type: "
@@ -41,11 +40,18 @@ public class Library {
 					);
 			
 			
-			
+		
+		
+		
 	
 
 	
 		
+	}
+	
+	public void addPatron(Patron p)
+	{
+		patrons.add(p);
 	}
 
 }
