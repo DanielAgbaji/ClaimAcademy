@@ -88,5 +88,9 @@ public class Librarian {
 		this.librarianRank=librarianRank;
 	}
 	
-	public String addPatrons()
+	public String addPatron() {
+		Patron addingPatron= new Patron ();
+		return this.
+		
+	}
 }
