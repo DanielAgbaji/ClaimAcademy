@@ -1,23 +1,89 @@
 package com.claim;
 
 public class Patron {
+	private String patronFirstName= "";
 	
-	private String PatronFirstName= "";
+	private String patronLastName= "";
 	
-	private String PatronLastName= "";
+	private int patronAge;
 	
-	private String PatronAddress= "";
+	private String patronSex ;
 	
-	private String PatronSex= "";
+	private String patronAddress= "";
 	
-	private String PatronCategory= "";
+	private String patronCategory= "";
 	
-	private String PatronLibraryCardNumber = "";
+	private String patronLibraryCardNumber = "";
 	
-	
-	public String getPatronFirstName() {
+	public Patron () {
 		
 	}
 	
+	public Patron (String patronFirstName, 
+			String patronLastName, int patronAge, String patronSex, 
+			String patronAddress,  String patronCategory, 
+			String patronLibraryCardNumber) {
+		
+		this.patronFirstName=patronFirstName;
+		this.patronLastName=patronLastName;
+		this.patronAge = patronAge;
+		this.patronAddress=patronAddress;
+		this.patronSex=patronSex;
+		this.patronCategory=patronCategory;
+		this.patronLibraryCardNumber=patronLibraryCardNumber;
+		
+		
+		
+	}
+	
+	
+	
+	public String getPatronFirstName() {
+		return this.patronFirstName;
+		
+	}
+	public void setPatronFirstName(String patronFirstName) {
+		this.patronFirstName=patronFirstName;
+	}
+	public String getPatronLastName() {
+		
+		return this.patronLastName;
+	}
+	public void setPatronLastName(String patronLastName) {
+		
+		this.patronLastName=patronLastName;
+	}
+	public int getPatronAge() {
+		return this.patronAge;
+	}
+	public void setPatronAge(int patronAge) {
+		this.patronAge=patronAge;
+	}
+	public String getPatronSex() {
+		return this.patronSex;
+	}
+	public void setPatronSex(String patronSex) {
+		this.patronSex=patronSex;
+	}
+	public String getPatronAddress() {
+		return this.patronAddress;
+	}
+	
+	public void setPatronAddress (String patronAddress) {
+		this.patronAddress=patronAddress;
+	}
+
+	public String getPatronCategory () {
+		return this.patronCategory;
+	}
+	public void setPatronCategory(String patronCategory) {
+		this.patronCategory=patronCategory;
+	}
+	public String getPatronLibraryCardNumber() {
+		return this.patronLibraryCardNumber;
+	}
+	public void setPatronLibraryCardNumber(String patronLibraryCardNumber) {
+		this.patronLibraryCardNumber=patronLibraryCardNumber;
+	}
 
 }
