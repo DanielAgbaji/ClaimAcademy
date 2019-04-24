@@ -9,7 +9,10 @@ public class Library {
 		
 		Branch libraryBranch = new Branch();
 		
-		LibraryResources libraryResource= new LibraryResources("Book", "William Shakespeare", );
+		LibraryResources libraryResource= new LibraryResources("Book", 
+				"William Shakespeare", 23220323,"Things Fall Apart",500);
+		
+		
 		
 		
 		
@@ -25,6 +28,18 @@ public class Library {
 					+newPatron2.getPatronAddress()+"\n "+"Category: "
 					+newPatron2.getPatronCategory()+"\n "+"Library Card NO: "
 					+newPatron2.getPatronLibraryCardNumber());
+			
+			System.out.println("Details of Resources Patron Borrowed"
+					+"\n"+"Type: "
+					+libraryResource.getResourceType()
+					+"\n "+"Author:"
+					+libraryResource.getAuthor()
+					+"\n "+"Title:"
+					+libraryResource.getTitle()
+					+"\n " +"ISBN: "
+					+libraryResource.getISBN()
+					);
+			
 			
 			
 	
