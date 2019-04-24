@@ -5,6 +5,10 @@ public class Library {
 	public static void main(String[] args) {
 		Patron newPatron1 = new Patron();
 		
+		Branch branch = new Branch();
+		
+		Branch libraryBranch = new Branch();
+		
 		Patron newPatron2 = new Patron ("Daniel", "Agbaji", 
 				29,"Male", "Emporia, Kansas", "Student", "DA-323232"); 
 				
