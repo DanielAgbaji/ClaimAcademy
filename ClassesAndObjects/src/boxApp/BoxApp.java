@@ -42,7 +42,6 @@ public class BoxApp {
 		System.out.println("The Surface Area of the box is: "+box.getSurfaceArea(depth, length, height));
 		
 		System.out.println("The cost of the box is: "+box.getCost(height, length, depth, costPerSquare));
-		//System.out.println("The volume of the box is: "getVolume(depth, length, height))
 		
 
 	}
