@@ -1,6 +1,10 @@
 package com.claim;
 
+import java.util.ArrayList;
+
 public class Patron {
+	
+	ArrayList<LibraryResources> books = new ArrayList<LibraryResources>();
 	private String patronFirstName= "";
 	
 	private String patronLastName= "";
@@ -87,4 +91,13 @@ public class Patron {
 	}
 //create an array of books for the books
 // create a class address with the Zip code and all that. 
+
+	@Override
+	public String toString() {
+		return "Patron [patronFirstName=" + patronFirstName + ", patronLastName=" + patronLastName + ", patronAge="
+				+ patronAge + ", patronSex=" + patronSex + ", patronAddress=" + patronAddress + ", patronCategory="
+				+ patronCategory + ", patronLibraryCardNumber=" + patronLibraryCardNumber + "]";
+	}
+	
+	
 }
