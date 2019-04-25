@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Patron {
 	
-	ArrayList<LibraryResources> books = new ArrayList<LibraryResources>();
+	ArrayList<LibraryResources> books = new ArrayList<>();
 	private String patronFirstName= "";
 	
 	private String patronLastName= "";

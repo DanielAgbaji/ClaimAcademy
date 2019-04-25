@@ -2,9 +2,9 @@ package com.claim;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Library {
-	 // Creating a Patron array list
+	  // Creating a Patron array list
 	
-	static ArrayList<Patron> patrons = new ArrayList<>();	
+	ArrayList<Patron> patrons = new ArrayList<>();	
 	public static void main(String[] args) {
 		// Patron object created
 		Patron newPatron1 = new Patron();
@@ -43,24 +43,21 @@ public class Library {
 			
 			System.out.println ("Enter the information resource type: ");
 			
-			String resourceType = input1.next();
+			String patronFirstName = input1.next();
 			
 		
 			
 			System.out.println ("Enter the Author of the Book: ");
 			
-			String author = input1.next();
+			String patronLastName = input1.next();
 			
 			
-			String title = input1.next();
+			int patronAge = input1.nextInt();
 			
 			System.out.println ("Enter the Title of the Book: ");
 			
-		
+			String patronAddress = input1.next();
 			
-			System.out.println ("Enter the ISBN of the Book: ");
-			
-			String isbn = input1.next();
 			addPatron(newPatron1);
 			System.out.println("Your new patron information is :"+newPatron1);
 		
