@@ -4,10 +4,11 @@ import java.util.Scanner;
 public class Library {
 	  // Creating a Patron array list
 	
-	ArrayList<Patron> patrons = new ArrayList<>();	
+	 ArrayList<Patron> patrons = new ArrayList<>();	
 	public static void main(String[] args) {
 		// Patron object created
-		Patron newPatron1 = new Patron();
+		
+		//Patron newPatron1 = new Patron();
 		
 		
 		
@@ -43,7 +44,7 @@ public class Library {
 			
 			System.out.println ("Enter the information resource type: ");
 			
-			String patronFirstName = input1.next();
+			String patronFirstName = input1.add();
 			
 		
 			
@@ -58,14 +59,16 @@ public class Library {
 			
 			String patronAddress = input1.next();
 			
-			addPatron(newPatron1);
+			patrons.add(patronAddress);
+			
+			addPatron(patrons);
 			System.out.println("Your new patron information is :"+newPatron1);
 		
 	}
 	
-	public static void addPatron(Patron p)
+	public static void addPatron(Patron P)
 	{
-		patrons.add(p);
+		patrons.add(P);
 	}
 
 }
