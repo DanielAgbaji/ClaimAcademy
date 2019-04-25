@@ -85,5 +85,6 @@ public class Patron {
 	public void setPatronLibraryCardNumber(String patronLibraryCardNumber) {
 		this.patronLibraryCardNumber=patronLibraryCardNumber;
 	}
-
+//create an array of books for the books
+// create a class address with the Zip code and all that. 
 }
