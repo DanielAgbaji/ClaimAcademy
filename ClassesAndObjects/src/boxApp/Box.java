@@ -57,17 +57,23 @@ public class Box {
 		this.costPerSquare=costPerSquare;
 		
 	}
+	// volume of a box l*w*h
 	public double getVolume(double height, double length, double depth) {
 		double volume=height*length*depth;
 		return volume;
 	}
-	//2(h × W) + 2(h × L) + 2(W × L)
+	//Surface Area of a box 2(h × W) + 2(h × L) + 2(W × L)
 	public double getSurfaceArea(double height, double length, double depth) {
 		
 		double surfaceArea = 2*(height*depth)+2*(depth*length)+2*(height*length);
 		
 		return surfaceArea; 
 	}
+	public double getCost(double height, double length, double depth, double costPerSquare) {
+		
+		double cost = getSurfaceArea(height, length, depth)*costPerSquare;
+		return cost;
+		}
 }
 	
 	

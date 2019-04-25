@@ -48,7 +48,7 @@ public class Branch {
 	public void setBranchWebsite(String branchWebsite) {
 		this.branchWebsite=branchWebsite;
 	}
-	//create the array of books
-	//create
+	//create the array of books in this class
+	//create the address class and call it here for easy referencing
 	
 }
