@@ -4,7 +4,14 @@ import java.util.Scanner;
 public class Library {
 	  // Creating a Patron array list
 	
-	 ArrayList<Patron> patrons = new ArrayList<>();	
+	ArrayList<Patron> patrons = new ArrayList<>();	
+	 
+	ArrayList<LibraryResources> books = new ArrayList<>();
+	
+	ArrayList<Librarian> librarians = new ArrayList<>();
+	
+	ArrayList<PatronProfile> patronProfiles = new ArrayList<>();
+	
 	public static void main(String[] args) {
 		// Patron object created
 		
@@ -52,6 +59,8 @@ public class Library {
 			
 			String patronLastName = input1.next();
 			
+			Patron patron = new Patron ();
+			
 			
 			int patronAge = input1.nextInt();
 			
@@ -59,16 +68,24 @@ public class Library {
 			
 			String patronAddress = input1.next();
 			
-			patrons.add(patronAddress);
+			patrons.add(patron);
 			
 			addPatron(patrons);
 			System.out.println("Your new patron information is :"+newPatron1);
 		
 	}
 	
-	public static void addPatron(Patron P)
+	public static void addPatron(Patron patron)
 	{
-		patrons.add(P);
+		patrons.add(patron);
+	}
+	public static void addPatronProfile(Patron patron)
+	{
+		patronProfiles.add(patron);
+	}
+	public static void addBookLog(Patron patron)
+	{
+		books.add(patron);
 	}
 
 }
