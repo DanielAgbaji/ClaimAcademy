@@ -2,7 +2,8 @@ package com.claim;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Library {
-	  // Creating a Patron array list
+	
+	// Creating a Patron array list
 	
 	ArrayList<Patron> patrons = new ArrayList<>();	
 	 
