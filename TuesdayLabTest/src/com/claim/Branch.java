@@ -3,7 +3,7 @@ package com.claim;
 public class Branch {
 	private String branchName;
 	private long   branchTelephone;
-	private String branchAddress;
+	private Address branchAddress;
 	private String branchEmail;
 	private String branchWebsite;
 	
@@ -13,7 +13,7 @@ public class Branch {
 	}
 	//parameterized constructor
 	public Branch(String branchName, long branchTelephone, 
-			String branchAddress, String branchEmail, String branchWebsite ) {
+			Address branchAddress, String branchEmail, String branchWebsite ) {
 		this.branchName = branchName;
 		this.branchTelephone = branchTelephone;
 		this.branchAddress = branchAddress;
