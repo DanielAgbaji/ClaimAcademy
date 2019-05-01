@@ -64,6 +64,7 @@ public class PhoneBookApplication {
 					break;
 				case 4: 
 					System.out.println("\n Type name of city or state to search phonebook record");
+					searchCity ();
 					break;
 					
 				case 5: 
@@ -142,6 +143,21 @@ public class PhoneBookApplication {
 							}
 							else 
 								System.out.print("The last name you entered is not on record");
+						}
+					}
+					private static void searchCity () {
+						Address newAddress = new Address(); 
+						String selection = input.nextLine();
+						for (Person person: people) {
+							if (newAddress.getCity().contains(selection)) {
+								System.out.println("Phone book record with the last name: "+selection+"\n"+ person.getFirstName()+","
+										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
+										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
+							}
+							else 
+								System.out.print("The last name you entered is not on record");
+								
+							
 						}
 					}
 }
