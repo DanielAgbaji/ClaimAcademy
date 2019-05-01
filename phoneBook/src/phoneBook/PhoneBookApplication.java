@@ -15,8 +15,6 @@ package phoneBook;
 
 import java.util.ArrayList;
 
-//import java.util.ArrayList;
-
 import java.util.Scanner;
 
 public class PhoneBookApplication {
@@ -24,8 +22,8 @@ public class PhoneBookApplication {
 	static ArrayList <Person> people = new ArrayList<>();
 	static Scanner input = new Scanner (System.in);
 	static Person person1  = new Person();
-	static Address newAddress = new Address();
-	static PhoneNumber newPhoneNumber = new PhoneNumber ();
+    static Address newAddress = new Address();
+	
 	
 
 
@@ -39,11 +37,18 @@ public class PhoneBookApplication {
 			System.out.println("Enter 5: Delete a record for a given telelphone number\n");
 			System.out.println("Enter 6: Show all records in ascending order of their last names\n");
 			System.out.println("Enter 7: To exit the phonebook program\n");
+			
+			Scanner input = new Scanner (System.in);
+			
+			
 				 
+			
 			int selection = 0;
+			
 			 while (selection!=7) {
 				 
 			selection = input.nextInt();
+			
 			switch(selection){
 				case 1: 
 					System.out.println("\n Add new entries into the phonebook (First name, last name, city, state, country, zipcode, phone number)");
@@ -51,48 +56,95 @@ public class PhoneBookApplication {
 					break;
 				case 2: 
 					System.out.println("\n Type contact name to search phonebook by first name");
+					searchFirstName();
 					break;
 				case 3: 
 					System.out.println("\n Type contact name to search phonebook by last name");
+					searchLastName ();
 					break;
 				case 4: 
 					System.out.println("\n Type name of city or state to search phonebook record");
 					break;
+					
 				case 5: 
 					System.out.println("\n Type telephone number to delete a record from phonebook");
 					break;
 				case 6: 
 					System.out.println("\n Type last name to show all records in ascending order of last names");
 					break;
+				case 7: 
+					System.out.println("\n Type number 7 to exit the application");
+					break;
 				default: 
 
 					System.out.println("\n You've exited the phonebook program successfully!");
 					break;
 				
-			}	
+			}
+			 selection = 0;
 			 }
 			}
 				
 					public static void addNewEntry() {
 						try{
+							
+							input = new Scanner(System.in);
 							String selection = input.nextLine();
 							String entryArr [ ] = selection.split(",");
 							
 							person1.setFirstName(entryArr[0]);
 							person1.setLastName(entryArr[1]);
-							person1.setAddress(entryArr[2]+""+entryArr[3]+""+entryArr[4]+"");
+							
+							newAddress.setCity(entryArr[2]);
+							newAddress.setState(entryArr[3]);
+							newAddress.setCountry(entryArr[4]);
+							newAddress.setAreaCode(entryArr[5]);
+							person1.setPhoneNumber(entryArr[6]);
 							people.add(person1);
+							
+							System.out.println("You have successfully added one entry into the phonebook app");
 		
 						}
 						catch(Exception err) {
 							System.out.println("Please enter a valid entry");
 						}
 					}
-					
-		
-		//Person person1 = new Person();
+
+					private static void searchFirstName() {
+							//String[] entryArr = null;
+							//person1.setLastName(entryArr[1]);
+							//input = new Scanner (System.in);
+
+						String selection = input.nextLine();
+
+						for (Person person : people){
+							
+							if (person.getFirstName().contains(selection)){
+								System.out.println("Phone book record with the first name:"+selection+"\n"+ person.getFirstName()+","
+										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
+										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
+							}
+						
+							else
+								System.out.println("The first name you entered is not on record");
+
 }
 
+}
+					
+					private static void searchLastName () {
+						String selection = input.nextLine();
+						for (Person person : people) {
+							if (person.getLastName().contains(selection)) {
+								System.out.println("Phone book record with the last name: "+selection+"\n"+ person.getFirstName()+","
+										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
+										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
+							}
+							else 
+								System.out.print("The last name you entered is not on record");
+						}
+					}
+}
 	
 
 

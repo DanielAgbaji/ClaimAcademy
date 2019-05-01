@@ -1,7 +1,5 @@
 package phoneBook;
 
-import java.util.ArrayList;
-
 public class Person {
 	private String firstName;
 	private String lastName;
@@ -21,8 +19,8 @@ public class Person {
 		
 	}
 	
-	public String getFirstName() {
-		return this.firstName;
+	public  String getFirstName() {
+		return firstName;
 	}
 	
 	public void setFirstName(String firstName) {
