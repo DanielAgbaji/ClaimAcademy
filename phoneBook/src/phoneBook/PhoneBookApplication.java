@@ -69,6 +69,7 @@ public class PhoneBookApplication {
 					
 				case 5: 
 					System.out.println("\n Type telephone number to delete a record from phonebook");
+					deleteRecordByTelephone();
 					break;
 				case 6: 
 					System.out.println("\n Type last name to show all records in ascending order of last names");
@@ -82,7 +83,8 @@ public class PhoneBookApplication {
 					break;
 				
 			}
-			 selection = 0;
+			selection = 0;
+			
 			 }
 			}
 				
@@ -96,11 +98,12 @@ public class PhoneBookApplication {
 							person1.setFirstName(entryArr[0]);
 							person1.setLastName(entryArr[1]);
 							
-							newAddress.setCity(entryArr[2]);
-							newAddress.setState(entryArr[3]);
-							newAddress.setCountry(entryArr[4]);
-							newAddress.setAreaCode(entryArr[5]);
-							person1.setPhoneNumber(entryArr[6]);
+							newAddress.setCity(entryArr[2].trim());
+							newAddress.setState(entryArr[3].trim());
+							newAddress.setCountry(entryArr[4].trim());
+							newAddress.setAreaCode(entryArr[5].trim());
+							person1.setPhoneNumber(entryArr[6].trim());
+							person1.setAddress(newAddress);
 							people.add(person1);
 							
 							System.out.println("You have successfully added one entry into the phonebook app");
@@ -117,6 +120,8 @@ public class PhoneBookApplication {
 							//input = new Scanner (System.in);
 
 						String selection = input.nextLine();
+						
+						selection = selection.toLowerCase();
 
 						for (Person person : people){
 							
@@ -133,6 +138,11 @@ public class PhoneBookApplication {
 
 }
 					
+//					private static String toLowerCase(String selection) {
+//						// 
+//						return null;
+//					}
+
 					private static void searchLastName () {
 						String selection = input.nextLine();
 						for (Person person : people) {
@@ -155,11 +165,22 @@ public class PhoneBookApplication {
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
 							}
 							else 
-								System.out.print("The last name you entered is not on record");
+								System.out.print("The city you entered is not on record");
 								
 							
 						}
 					}
+					private static void deleteRecordByTelephone () {
+						String selection = input.nextLine();
+						for (Person person:people) {
+							if (person.getPhoneNumber().equals(selection.trim())) {
+								people.remove(person); 
+							}
+
+						
+					}
+}
+					
 }
 	
 
