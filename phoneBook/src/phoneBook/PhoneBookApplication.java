@@ -14,10 +14,15 @@
 package phoneBook;
 
 import java.util.ArrayList;
-
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
-public class PhoneBookApplication {
+
+
+public class PhoneBookApplication extends java.lang.Thread {
 	
 	static ArrayList <Person> people = new ArrayList<>();
 	static Scanner input = new Scanner (System.in);
@@ -171,11 +176,19 @@ public class PhoneBookApplication {
 						}
 					}
 					private static void deleteRecordByTelephone () {
-						String selection = input.nextLine();
-						for (Person person:people) {
-							if (person.getPhoneNumber().equals(selection.trim())) {
-								people.remove(person); 
+						
+						List<Person> people = new ArrayList<Person>();
+						
+						for (Interator <Person> person = people.person(); person.hasNext();) {
+							String selection1 = person.nextLine();
+							if (person.getPhoneNumber().equals(selection1.trim())) {
+								person.remove(person); 
+								
+								System.out.println("The number: "+selection1+"you entered is now deleted from record");
 							}
+							else 
+								System.out.println("The phone number" +selection1+"you entered is not on record");
+							
 
 						
 					}
