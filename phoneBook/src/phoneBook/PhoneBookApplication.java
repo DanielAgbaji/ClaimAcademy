@@ -179,15 +179,15 @@ public class PhoneBookApplication extends java.lang.Thread {
 						
 						List<Person> people = new ArrayList<Person>();
 						
-						for (Interator <Person> person = people.person(); person.hasNext();) {
-							String selection1 = person.nextLine();
-							if (person.getPhoneNumber().equals(selection1.trim())) {
+						for (Iterator <Person> person = people.iterator(); people.hasNext();) {
+							String selection = person.nextLine();
+							if (person.getPhoneNumber().equals(selection.trim())) {
 								person.remove(person); 
 								
-								System.out.println("The number: "+selection1+"you entered is now deleted from record");
+								System.out.println("The number: "+selection+"you entered is now deleted from record");
 							}
 							else 
-								System.out.println("The phone number" +selection1+"you entered is not on record");
+								System.out.println("The phone number" +selection+"you entered is not on record");
 							
 
 						
