@@ -179,7 +179,7 @@ public class PhoneBookApplication extends java.lang.Thread {
 						
 						List<Person> people = new ArrayList<Person>();
 						
-						for (Iterator <Person> person = people.iterator(); people.hasNext();) {
+						for (Iterator <Person> person = people.iterator(); people.hasNext()) {
 							String selection = person.nextLine();
 							if (person.getPhoneNumber().equals(selection.trim())) {
 								person.remove(person); 
