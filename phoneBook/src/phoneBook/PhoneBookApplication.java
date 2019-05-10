@@ -77,7 +77,8 @@ public class PhoneBookApplication extends java.lang.Thread {
 					deleteRecordByTelephone();
 					break;
 				case 6: 
-					System.out.println("\n Type last name to show all records in ascending order of last names");
+					System.out.println("\n Update the first name on the record by entering a first name");
+					updateFristName();
 					break;
 				case 7: 
 					System.out.println("\n Type number 7 to exit the application");
@@ -178,24 +179,50 @@ public class PhoneBookApplication extends java.lang.Thread {
 					private static void deleteRecordByTelephone () {
 						
 						List<Person> people = new ArrayList<Person>();
+						String selection = input.nextLine();
 						
-						for (Iterator <Person> person = people.iterator(); people.hasNext()) {
-							String selection = person.nextLine();
-							if (person.getPhoneNumber().equals(selection.trim())) {
+						for (Person person: people) {
+							if (person.getPhoneNumber().equals(selection.trim())){
 								
-								people.remove(person); 
-								
-								System.out.println("The number: "+selection+"you entered is now deleted from record");
+							people.remove(person);
+							
+							System.out.println("The number: "+selection+" you entered is now deleted from record");
+							
 							}
 							else 
-								System.out.println("The phone number" +selection+"you entered is not on record");
-							
-
-						
+								System.out.println("The phone number" +selection+" you entered is not on record");	
+						}
 					}
+					
+					private static void updateFristName() {
+						
+						String selection = input.nextLine();
+						
+						List<Person> people = new ArrayList<Person>();
+						
+						
+						//for (Person person: people) {
+							
+							for(Person person: people)
+					        {
+					            if(person.getFirstName().equals(selection.trim())) {
+					            	
+					               person.setFirstName(selection);
+					               
+					               System.out.println("The first name: "+selection+" you entered is now updated on record");
+					            }
+					            else 
+									System.out.println("The first name " +selection+" you entered is not on record");	
+					        }
+							
+							
+						}
+					
+
 }
 					
-}
+					
+					
 	
 
 
