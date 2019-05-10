@@ -182,7 +182,8 @@ public class PhoneBookApplication extends java.lang.Thread {
 						for (Iterator <Person> person = people.iterator(); people.hasNext()) {
 							String selection = person.nextLine();
 							if (person.getPhoneNumber().equals(selection.trim())) {
-								person.remove(person); 
+								
+								people.remove(person); 
 								
 								System.out.println("The number: "+selection+"you entered is now deleted from record");
 							}
