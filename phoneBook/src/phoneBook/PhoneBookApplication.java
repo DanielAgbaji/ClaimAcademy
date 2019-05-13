@@ -14,6 +14,8 @@
 package phoneBook;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -22,15 +24,16 @@ import java.util.Scanner;
 
 
 
-public class PhoneBookApplication extends java.lang.Thread {
+public class PhoneBookApplication extends java.lang.Thread implements Comparator {
 	
 	static ArrayList <Person> people = new ArrayList<>();
 	static Scanner input = new Scanner (System.in);
 	static Person person1  = new Person();
+	static Person person2 = new Person();
     static Address newAddress = new Address();
 	
 	
-
+// Next line begins with instructions for the users
 
 	public static void main(String[] args) {
 			
@@ -40,19 +43,21 @@ public class PhoneBookApplication extends java.lang.Thread {
 			System.out.println("Enter 3: Search by last name\n");
 			System.out.println("Enter 4: Search by city or State\n");
 			System.out.println("Enter 5: Delete a record for a given telelphone number\n");
-			System.out.println("Enter 6: Show all records in ascending order of their last names\n");
+			System.out.println("Enter 6: Update the first name on record for a given telephone number\n");
+			System.out.println("Enter 7: Show all records in ascending order of their last names\n");
 			System.out.println("Enter 7: To exit the phonebook program\n");
 			
-			Scanner input = new Scanner (System.in);
-			
-			
+
 				 
+// Initialization of selection for the switch statement
 			
 			int selection = 0;
 			
 			 while (selection!=7) {
 				 
 			selection = input.nextInt();
+			
+			//String selection1 = input. nextLine();
 			
 			switch(selection){
 				case 1: 
@@ -77,12 +82,19 @@ public class PhoneBookApplication extends java.lang.Thread {
 					deleteRecordByTelephone();
 					break;
 				case 6: 
-					System.out.println("\n Update the first name on the record by entering a first name");
-					updateFristName();
+					updateFristNamebyTelephoneNumber();
+					System.out.println("\n Enter the first name you like to update on record: ");
+					updateFristNamebyTelephoneNumber();
+					
+//					System.out.println("\n Enter the new first name: ");
+//					updateFirstName();
 					break;
 				case 7: 
-					System.out.println("\n Type number 7 to exit the application");
+					System.out.println("\n Type number 6 to sort out the records alphabetically");
+					sortRecordsAlphabetically();
 					break;
+				case 8: 
+					System.out.println("\n Type number 7 to sort out the records alphabetically");
 				default: 
 
 					System.out.println("\n You've exited the phonebook program successfully!");
@@ -94,7 +106,9 @@ public class PhoneBookApplication extends java.lang.Thread {
 			 }
 			}
 				
-					public static void addNewEntry() {
+// First use case method to add record in phone book 
+	
+		public static void addNewEntry() {
 						try{
 							
 							input = new Scanner(System.in);
@@ -112,6 +126,7 @@ public class PhoneBookApplication extends java.lang.Thread {
 							person1.setAddress(newAddress);
 							people.add(person1);
 							
+							
 							System.out.println("You have successfully added one entry into the phonebook app");
 		
 						}
@@ -120,14 +135,13 @@ public class PhoneBookApplication extends java.lang.Thread {
 						}
 					}
 
-					private static void searchFirstName() {
-							//String[] entryArr = null;
-							//person1.setLastName(entryArr[1]);
-							//input = new Scanner (System.in);
+// second use case method for user to search record by first name in phonebook
+		
+		private static void searchFirstName() {
+			
 
 						String selection = input.nextLine();
 						
-						selection = selection.toLowerCase();
 
 						for (Person person : people){
 							
@@ -143,11 +157,8 @@ public class PhoneBookApplication extends java.lang.Thread {
 }
 
 }
-					
-//					private static String toLowerCase(String selection) {
-//						// 
-//						return null;
-//					}
+// Third use case method for user to search record by last name in phonebook 
+		
 
 					private static void searchLastName () {
 						String selection = input.nextLine();
@@ -162,20 +173,29 @@ public class PhoneBookApplication extends java.lang.Thread {
 						}
 					}
 					private static void searchCity () {
-						Address newAddress = new Address(); 
+						//Address newAddress = new Address(); 
 						String selection = input.nextLine();
 						for (Person person: people) {
 							if (newAddress.getCity().contains(selection)) {
-								System.out.println("Phone book record with the last name: "+selection+"\n"+ person.getFirstName()+","
+								System.out.println("Phone book record with the city name: "+selection+"\n"+ person.getFirstName()+","
 										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
 							}
+							 if (newAddress.getState().contains(selection)) {
+								System.out.println("Phone book record with the state name: "+selection+"\n"+ person.getFirstName()+","
+										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
+										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
+								
+								}
 							else 
-								System.out.print("The city you entered is not on record");
+								System.out.print("The state you entered is not on record");
 								
 							
 						}
 					}
+					
+//Fourth use case for user to delete records by the telephone number on phonebook
+					
 					private static void deleteRecordByTelephone () {
 						
 						List<Person> people = new ArrayList<Person>();
@@ -183,10 +203,12 @@ public class PhoneBookApplication extends java.lang.Thread {
 						
 						for (Person person: people) {
 							if (person.getPhoneNumber().equals(selection.trim())){
+							
+						   System.out.println("The number: "+selection+" you entered is now deleted from record");
 								
 							people.remove(person);
 							
-							System.out.println("The number: "+selection+" you entered is now deleted from record");
+							
 							
 							}
 							else 
@@ -194,29 +216,78 @@ public class PhoneBookApplication extends java.lang.Thread {
 						}
 					}
 					
-					private static void updateFristName() {
+//Fifth use case method for user to update first name by telephone number on phonebook record 
+					
+					
+					private static void updateFristNamebyTelephoneNumber() {
 						
-						String selection = input.nextLine();
+						String selection1 = input.nextLine();
+						String selection2 = input.nextLine();
+				
+						//String entryArr [ ] = selection2.split(",");
 						
 						List<Person> people = new ArrayList<Person>();
 						
+							
+//						PhoneBookApplication.addNewEntry();
+//				        System.out.println(Person.toString(people));
+//				        people.get(0).setFirstName(selection1);
+//				        System.out.println(Person.toString(people));
+//				        System.out.println("end");
+				      
 						
-						//for (Person person: people) {
-							
-							for(Person person: people)
+							for (Person person: people)
 					        {
-					            if(person.getFirstName().equals(selection.trim())) {
+					        
+					            
+							if(person!=null && person.getFirstName().contains(selection1.trim())) {
 					            	
-					               person.setFirstName(selection);
-					               
-					               System.out.println("The first name: "+selection+" you entered is now updated on record");
-					            }
-					            else 
-									System.out.println("The first name " +selection+" you entered is not on record");	
+					             
+					           
+					           person.setFirstName(selection2);
+					           
+					           System.out.println("The telephone number: "+selection1+" for which you like to update the first name in record is now: "+selection2 );
+							}
+							else
+					        	   System.out.println("No record on phonebook");
+					        	   
 					        }
+					       
+					            	
+					            }
+					            	
+					          
+					        
+					
+						@SuppressWarnings("rawtypes")
+						private static void sortRecordsAlphabetically() {
 							
+							ArrayList<Person> people = new ArrayList<Person>();}
+				
+							   
+							 public static void  compare(Person person1, Person person2) {
+
+							            person1.getLastName().compareTo(person2.getLastName());
+							   }
+						
 							
-						}
+								
+								//if(person1.getFirstName().equals(selection1.trim())) {
+									
+									//people.add(selection2);
+								//}
+								//else
+								//	System.out.println("The firstname you are trying to update is not on record");
+		
+						
+
+@Override
+public int compare(Object o1, Object o2) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+					
 					
 
 }
