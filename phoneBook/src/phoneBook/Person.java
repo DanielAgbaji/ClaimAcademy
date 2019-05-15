@@ -52,18 +52,18 @@ public class Person {
 	public void setPhoneNumber (String  phoneNumber) {
 		this.phoneNumber=phoneNumber;
 	}
-	 @Override
-	    public String toString() {
-	        return firstName + ", " + lastName+","+phoneNumber+","+address;
-	    }
-
-	    public static String toString(Collection<Person> people) {
-	        String s = "";
-	        for(Person person : people) {
-	            s += person + "\n";
-	        }
-	        return s;
-	    }
+//	 @Override
+//	    public String toString() {
+//	        return firstName + ", " + lastName+","+phoneNumber+","+address;
+//	    }
+//
+//	    public static String toString(Collection<Person> people) {
+//	        String s = "";
+//	        for(Person person : people) {
+//	            s += person + "\n";
+//	        }
+//	        return s;
+//	    }
 
 	}
 	

@@ -82,8 +82,7 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 					deleteRecordByTelephone();
 					break;
 				case 6: 
-					updateFristNamebyTelephoneNumber();
-					System.out.println("\n Enter the first name you like to update on record: ");
+					System.out.println ("\n Enter the first name you like to update on record: ");
 					updateFristNamebyTelephoneNumber();
 					
 //					System.out.println("\n Enter the new first name: ");
@@ -139,22 +138,23 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 		
 		private static void searchFirstName() {
 			
+							input = new Scanner(System.in);
 
-						String selection = input.nextLine();
+						  String selection = input.nextLine();
 						
 
 						for (Person person : people){
 							
-							if (person.getFirstName().contains(selection)){
+							if (person.getFirstName().contains(selection.trim())){
 								System.out.println("Phone book record with the first name:"+selection+"\n"+ person.getFirstName()+","
 										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
 							}
 						
+						
 							else
 								System.out.println("The first name you entered is not on record");
-
-}
+						}
 
 }
 // Third use case method for user to search record by last name in phonebook 
