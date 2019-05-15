@@ -61,42 +61,42 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 			
 			switch(selection){
 				case 1: 
-					System.out.println("\n Add new entries into the phonebook (First name, last name, city, state, country, zipcode, phone number)");
+					System.out.println("Add new entries into the phonebook (First name, last name, city, state, country, zipcode, phone number)");
 					addNewEntry();
 					break;
 				case 2: 
-					System.out.println("\n Type contact name to search phonebook by first name");
+					System.out.println("Type contact name to search phonebook by first name");
 					searchFirstName();
 					break;
 				case 3: 
-					System.out.println("\n Type contact name to search phonebook by last name");
+					System.out.println("Type contact name to search phonebook by last name:\n");
 					searchLastName ();
 					break;
 				case 4: 
-					System.out.println("\n Type name of city or state to search phonebook record");
+					System.out.println("Type name of city or state to search phonebook record:\n");
 					searchCity ();
 					break;
 					
 				case 5: 
-					System.out.println("\n Type telephone number to delete a record from phonebook");
+					System.out.println("Type telephone number to delete a record from phonebook:\n");
 					deleteRecordByTelephone();
 					break;
 				case 6: 
-					System.out.println ("\n Enter the first name you like to update on record: ");
+					System.out.println ("\n Enter the first name you like to update on record:\n");
 					updateFristNamebyTelephoneNumber();
 					
 //					System.out.println("\n Enter the new first name: ");
 //					updateFirstName();
 					break;
 				case 7: 
-					System.out.println("\n Type number 6 to sort out the records alphabetically");
+					System.out.println("\n Type number 6 to sort out the records alphabetically:\n");
 					sortRecordsAlphabetically();
 					break;
 				case 8: 
-					System.out.println("\n Type number 7 to sort out the records alphabetically");
+					System.out.println("\n Type number 7 to sort out the records alphabetically:\n");
 				default: 
 
-					System.out.println("\n You've exited the phonebook program successfully!");
+					System.out.println("\n You've exited the phonebook program successfully!:\n");
 					break;
 				
 			}
@@ -109,8 +109,8 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 	
 		public static void addNewEntry() {
 						try{
-							
 							input = new Scanner(System.in);
+							person1 = new Person();
 							String selection = input.nextLine();
 							String entryArr [ ] = selection.split(",");
 							
@@ -141,12 +141,13 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 							input = new Scanner(System.in);
 
 						  String selection = input.nextLine();
-						
+						 
+						  System.out.println("Phone book record with the first name:"+selection);
 
 						for (Person person : people){
 							
 							if (person.getFirstName().contains(selection.trim())){
-								System.out.println("Phone book record with the first name:"+selection+"\n"+ person.getFirstName()+","
+								System.out.println("\n"+ person.getFirstName()+","
 										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
 							}
@@ -161,6 +162,9 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 		
 
 					private static void searchLastName () {
+						
+						input = new Scanner(System.in);
+						
 						String selection = input.nextLine();
 						for (Person person : people) {
 							if (person.getLastName().contains(selection)) {
@@ -173,7 +177,7 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 						}
 					}
 					private static void searchCity () {
-						//Address newAddress = new Address(); 
+						input = new Scanner (System.in);
 						String selection = input.nextLine();
 						for (Person person: people) {
 							if (newAddress.getCity().contains(selection)) {
