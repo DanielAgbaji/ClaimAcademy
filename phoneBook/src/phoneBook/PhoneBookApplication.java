@@ -45,7 +45,7 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 			System.out.println("Enter 5: Delete a record for a given telelphone number\n");
 			System.out.println("Enter 6: Update the first name on record for a given telephone number\n");
 			System.out.println("Enter 7: Show all records in ascending order of their last names\n");
-			System.out.println("Enter 7: To exit the phonebook program\n");
+			System.out.println("Enter 8: To exit the phonebook program\n");
 			
 
 				 
@@ -53,7 +53,7 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 			
 			int selection = 0;
 			
-			 while (selection!=7) {
+			 while (selection!=8) {
 				 
 			selection = input.nextInt();
 			
@@ -61,7 +61,7 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 			
 			switch(selection){
 				case 1: 
-					System.out.println("Add new entries into the phonebook (First name, last name, city, state, country, zipcode, phone number)");
+					System.out.println("Add new entries into the phonebook (First name, last name, city, state, country, zipcode, phone number)\n");
 					addNewEntry();
 					break;
 				case 2: 
@@ -70,11 +70,11 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 					break;
 				case 3: 
 					System.out.println("Type contact name to search phonebook by last name:\n");
-					searchLastName ();
+					searchLastName();
 					break;
 				case 4: 
 					System.out.println("Type name of city or state to search phonebook record:\n");
-					searchCity ();
+					searchCity();
 					break;
 					
 				case 5: 
@@ -166,31 +166,30 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 						input = new Scanner(System.in);
 						
 						String selection = input.nextLine();
+						System.out.println("Phone book record with the last name:"+selection);
 						for (Person person : people) {
-							if (person.getLastName().contains(selection)) {
-								System.out.println("Phone book record with the last name: "+selection+"\n"+ person.getFirstName()+","
+							if (person.getLastName().contains(selection.trim())) {
+								System.out.println(person.getFirstName()+","
 										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
+								break;
 							}
 							else 
 								System.out.print("The last name you entered is not on record");
 						}
 					}
 					private static void searchCity () {
-						input = new Scanner (System.in);
+						input = new Scanner(System.in);
 						String selection = input.nextLine();
+						System.out.println("Phone book record with the city name: "+selection);
 						for (Person person: people) {
-							if (newAddress.getCity().contains(selection)) {
-								System.out.println("Phone book record with the city name: "+selection+"\n"+ person.getFirstName()+","
+							if (newAddress.getCity().contains(selection)||(newAddress.getState().contains(selection))) {
+								System.out.println(person.getFirstName()+","
 										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
+								break;
 							}
-							 if (newAddress.getState().contains(selection)) {
-								System.out.println("Phone book record with the state name: "+selection+"\n"+ person.getFirstName()+","
-										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
-										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
-								
-								}
+							
 							else 
 								System.out.print("The state you entered is not on record");
 								
