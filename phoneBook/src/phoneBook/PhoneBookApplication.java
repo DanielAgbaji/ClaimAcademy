@@ -150,6 +150,8 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 								System.out.println("\n"+ person.getFirstName()+","
 										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
+								
+								break;
 							}
 						
 						
