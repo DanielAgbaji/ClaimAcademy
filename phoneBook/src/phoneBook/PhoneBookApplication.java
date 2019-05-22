@@ -126,10 +126,11 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 							people.add(person1);
 							
 							
-							System.out.println("You have successfully added one entry into the phonebook app");
+							System.out.println("\n You have successfully added one entry into the phonebook app");
 		
 						}
 						catch(Exception err) {
+							err.printStackTrace();
 							System.out.println("Please enter a valid entry");
 						}
 					}
@@ -155,8 +156,7 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 							}
 						
 						
-							else
-								System.out.println("The first name you entered is not on record");
+							
 						}
 
 }
@@ -174,26 +174,24 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 								System.out.println(person.getFirstName()+","
 										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
-								break;
+							
 							}
-							else 
-								System.out.print("The last name you entered is not on record");
 						}
+							       
 					}
 					private static void searchCity () {
 						input = new Scanner(System.in);
 						String selection = input.nextLine();
 						System.out.println("Phone book record with the city name: "+selection);
 						for (Person person: people) {
-							if (newAddress.getCity().contains(selection)||(newAddress.getState().contains(selection))) {
+							if (newAddress.getCity().contains(selection)||(newAddress.getState().contains(selection.trim()))) {
 								System.out.println(person.getFirstName()+","
 										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
 								break;
 							}
 							
-							else 
-								System.out.print("The state you entered is not on record");
+							
 								
 							
 						}
@@ -216,8 +214,7 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 							
 							
 							}
-							else 
-								System.out.println("The phone number" +selection+" you entered is not on record");	
+							
 						}
 					}
 					
