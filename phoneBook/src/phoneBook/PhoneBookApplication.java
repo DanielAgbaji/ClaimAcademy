@@ -23,19 +23,24 @@ import java.util.Map;
 import java.util.Scanner;
 
 
+// You will find the project description in the multiple line comment above the package phoneBook
 
+@SuppressWarnings("rawtypes")
 public class PhoneBookApplication extends java.lang.Thread implements Comparator {
 	
 	static ArrayList <Person> people = new ArrayList<>();
-	static Scanner input = new Scanner (System.in);
-	static Person person1  = new Person();
-	static Person person2 = new Person();
-    static Address newAddress = new Address();
+	static Scanner input;
+	//static Person person1  = new Person();
+//	static Person person2 = new Person();
+    //static Address newAddress = new Address();
 	
 	
 // Next line begins with instructions for the users
 
 	public static void main(String[] args) {
+		    
+		    input = new Scanner(System.in);
+		    
 			
 			System.out.println("Welcome to the Phonebook Application\n");
 			System.out.println("Enter 1: Add new entries\n");
@@ -57,7 +62,7 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 				 
 			selection = input.nextInt();
 			
-			//String selection1 = input. nextLine();
+			String selection1 = input. nextLine();
 			
 			switch(selection){
 				case 1: 
@@ -108,14 +113,16 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 // First use case method to add record in phone book 
 	
 		public static void addNewEntry() {
+			
 						try{
-							input = new Scanner(System.in);
-							person1 = new Person();
+							//input = new Scanner(System.in);
+							Address newAddress = new Address();
+							Person person1 = new Person();
 							String selection = input.nextLine();
 							String entryArr [ ] = selection.split(",");
 							
-							person1.setFirstName(entryArr[0]);
-							person1.setLastName(entryArr[1]);
+							person1.setFirstName(entryArr[0].trim());
+							person1.setLastName(entryArr[1].trim());
 							
 							newAddress.setCity(entryArr[2].trim());
 							newAddress.setState(entryArr[3].trim());
@@ -139,20 +146,22 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 		
 		private static void searchFirstName() {
 			
-							input = new Scanner(System.in);
+							//input = new Scanner(System.in);
+						  //Address newAddress = new Address();
 
-						  String selection = input.nextLine();
+						  String selection = input.nextLine().trim();
 						 
 						  System.out.println("Phone book record with the first name:"+selection);
 
 						for (Person person : people){
 							
-							if (person.getFirstName().contains(selection.trim())){
-								System.out.println("\n"+ person.getFirstName()+","
+							if (person.getFirstName().trim().contains(selection.trim())){
+								Address newAddress = person.getAddress();
+								System.out.println("\n"+ person.getFirstName().trim()+","
 										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
 								
-								break;
+								
 							}
 						
 						
@@ -162,45 +171,85 @@ public class PhoneBookApplication extends java.lang.Thread implements Comparator
 }
 // Third use case method for user to search record by last name in phonebook 
 		
-
+		           
+		           
 					private static void searchLastName () {
-						
-						input = new Scanner(System.in);
-						
-						String selection = input.nextLine();
+
+						String selection = input.nextLine().trim();
 						System.out.println("Phone book record with the last name:"+selection);
 						for (Person person : people) {
-							if (person.getLastName().contains(selection.trim())) {
-								System.out.println(person.getFirstName()+","
-										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
+							if (person.getLastName().trim().contains(selection.trim())) {
+								Address newAddress = person.getAddress();
+								System.out.println(person.getFirstName().trim()+","
+										+person.getLastName().trim()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
 										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
 							
 							}
 						}
 							       
 					}
-					private static void searchCity () {
-						input = new Scanner(System.in);
-						String selection = input.nextLine();
-						System.out.println("Phone book record with the city name: "+selection);
-						for (Person person: people) {
-							if (newAddress.getCity().contains(selection)||(newAddress.getState().contains(selection.trim()))) {
-								System.out.println(person.getFirstName()+","
-										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
-										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
-								break;
-							}
+// Third use case method for user to search record by searchCity name in phonebook 
+					private static void searchCity() {
+						
+						//input = new Scanner(System.in);
+					  //Address newAddress = new Address();
+
+					  String selection = input.nextLine().trim();
+					 
+					  System.out.println("Phone book record with the City name:"+selection);
+					  
+					  
+
+					  for (Person person : people){
+						  
+						  Address newAddress = person.getAddress();
+						
+						
+						if (newAddress.getCity().trim().contains(selection.trim())){
 							
+							System.out.println("\n"+ person.getFirstName().trim()+","
+									+person.getLastName().trim()+","+person.getPhoneNumber().trim()+","+newAddress.getCity().trim()+","
+									+newAddress.getState().trim()+","+newAddress.getCountry().trim()+","+newAddress.getAreaCode().trim());
 							
-								
 							
 						}
+						else if (newAddress.getState().trim().contains(selection.trim())){
+							
+							System.out.println("\n"+ person.getFirstName().trim()+","
+									+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity().trim()+","
+									+newAddress.getState().trim()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
+							
+							
+						}
+					
+					
+						
 					}
+
+}
+//					private static void searchCity () {
+//						
+//						String selection = input.nextLine();
+//						System.out.println("Phone book record with the city name: "+selection);
+//						for (Person person: people) {
+//							Address newAddress = person.getAddress();
+//							if (newAddress.getCity().trim().contains(selection.trim())||(newAddress.getState().trim().contains(selection.trim()))) {
+//								System.out.println(person.getFirstName()+","
+//										+person.getLastName()+","+person.getPhoneNumber()+","+newAddress.getCity()+","
+//										+newAddress.getState()+","+newAddress.getCountry()+","+newAddress.getAreaCode());
+//		
+//							}
+//							
+//							
+//								
+//							
+//						}
+//					}
 					
 //Fourth use case for user to delete records by the telephone number on phonebook
 					
 					private static void deleteRecordByTelephone () {
-						
+						//input = new Scanner (System.in);
 						List<Person> people = new ArrayList<Person>();
 						String selection = input.nextLine();
 						
